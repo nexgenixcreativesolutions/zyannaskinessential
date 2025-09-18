@@ -203,6 +203,47 @@
   }
 }
 
+.distributor-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.distributor-card {
+  background: #fff;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.distributor-card:hover {
+  transform: translateY(-5px);
+}
+
+.distributor-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.distributor-card h4 {
+  margin: 0.5rem 0 0.2rem;
+  color: #b22222;
+  font-size: 1rem;
+}
+
+.distributor-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
 /* Partners Section */
 #partners {
   background: #fff;
@@ -479,17 +520,54 @@
   <h2>Regional Distributors</h2>
   <div class="marquee-container">
     <div class="marquee-track">
-      <img src="zse.jpg" alt="Client 1" class="client-img">
-      <img src="zse.jpg" alt="Client 2" class="client-img">
-      <img src="zse.jpg" alt="Client 3" class="client-img">
-      <img src="zse.jpg" alt="Client 4" class="client-img">
-      <img src="zse.jpg" alt="Client 5" class="client-img">
+<div class="distributor-cards">
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 1">
+    <h4>Jane Doe</h4>
+    <p>Region I - Ilocos</p>
+  </div>
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 2">
+    <h4>John Smith</h4>
+    <p>Region VII - Cebu</p>
+  </div>
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 2">
+    <h4>John Smith</h4>
+    <p>Region VII - Cebu</p>
+  </div>
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 2">
+    <h4>John Smith</h4>
+    <p>Region VII - Cebu</p>
+  </div>
+</div>
       <!-- Duplicate images for seamless loop -->
-      <img src="zse.jpg" alt="Client 1" class="client-img">
-      <img src="zse.jpg" alt="Client 2" class="client-img">
-      <img src="zse.jpg" alt="Client 3" class="client-img">
-      <img src="zse.jpg" alt="Client 4" class="client-img">
-      <img src="zse.jpg" alt="Client 5" class="client-img">
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 2">
+    <h4>John Smith</h4>
+    <p>Region VII - Cebu</p>
+  </div>
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 2">
+    <h4>John Smith</h4>
+    <p>Region VII - Cebu</p>
+  </div>
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 2">
+    <h4>John Smith</h4>
+    <p>Region VII - Cebu</p>
+  </div>
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 2">
+    <h4>John Smith</h4>
+    <p>Region VII - Cebu</p>
+  </div>
+  <div class="distributor-card">
+    <img src="zse.jpg" alt="Distributor 2">
+    <h4>John Smith</h4>
+    <p>Region VII - Cebu</p>
+  </div>
     </div>
   </div>
 </section>
