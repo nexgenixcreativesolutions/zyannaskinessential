@@ -185,6 +185,38 @@
   }
 }
 
+/* Partners Section */
+#partners {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+#partners h2 {
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 2rem;
+}
+
+.partners-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.partner-logo {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}
+
     /* Responsive */
     @media(max-width: 768px){
       .nav-list {
@@ -281,6 +313,27 @@
   </div>
 </section>
 
+<!-- Partners Section -->
+<section id="partners">
+  <h2>Our Trusted Partners</h2>
+  <div class="partners-container">
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+    <a href="https://partnerwebsite.com" target="_blank">
+      <img src="zse.jpg" alt="Partner 1" class="partner-logo">
+    </a>
+  </div>
+</section>
   
   <!-- Footer -->
   <footer>
