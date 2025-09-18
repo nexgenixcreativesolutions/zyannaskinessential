@@ -78,30 +78,48 @@
       background: #333;
     }
 
-    /* Hero Section */
-    #welcome-section {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
-    }
-    .slogan {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #b22222;
-      margin-bottom: 1.5rem;
-    }
-    #welcome-section p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 1.1rem;
-      color: #444;
-    }
-    .banner {
-      margin-top: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+/* Hero Section */
+#welcome-section {
+  text-align: center;
+  padding: 6rem 2rem;
+  background-image: url('zse.jpg'); /* This applies the image ONLY to this section */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+}
 
+#welcome-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 182, 193, 0.6); /* Optional pink overlay */
+  z-index: 0;
+}
+
+#welcome-section .slogan,
+#welcome-section p {
+  position: relative;
+  z-index: 1;
+}
+
+.slogan {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #b22222;
+  margin-bottom: 1.5rem;
+}
+
+#welcome-section p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  color: #333;
+}
     /* About Section */
     #about_us {
       padding: 4rem 2rem;
@@ -394,7 +412,7 @@
   <section id="welcome-section">
     <h1 class="slogan">BEAUTY IN SIMPLICITY.</h1>
     <p>At Zyanna'Skin Essential, we are passionate about helping you express your true beauty. We believe that beauty comes from within and we are dedicated to providing you with the best products to help you shine. Explore our collection and unleash the beauty that's uniquely you.</p>
-    <img src="zse.jpg" alt="banner" class="banner">
+    <src="zse.jpg" alt="banner" class="banner">
   </section>
 
   <!-- About Section -->
