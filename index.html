@@ -217,6 +217,83 @@
   transform: scale(1.05);
 }
 
+    /* Products Section */
+#products {
+  background: #fff0f5;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#products h2 {
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 2.5rem;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 280px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  color: #b22222;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.buy-button {
+  background: #b22222;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buy-button:hover {
+  background: #8b0000;
+}
+
+
     /* Responsive */
     @media(max-width: 768px){
       .nav-list {
@@ -283,6 +360,32 @@
     <p>Its pioneer product, Milky Glow Soap, has already proven its superb quality with outstanding sales performance and positive feedbacks. With a mild formulation and proven efficacy in achieving glowing skin and removing blemishes, dark spots and pimple marks through continuous use, the Milky Glow Soap has certainly proven to be worth its price.</p>
     <p>Zyanna'Skin Essential also released its newest product, Glow Shield Whitening Sunscreen Gel Cream with SPF 50, with nothing but the best quality, efficacy, and affordability guaranteed for its users.</p>
     <p>More products will be released soon, including Kojic Papaya Soap, Whitening Lotion, Rejuvenating Sets, and more. The dedication and support that our distributors, resellers and customers have entrusted to us will always be part of Zyanna'Skin Essential's growth and success.</p>
+
+    <!-- Products Section -->
+<section id="products">
+  <h2>Our Products</h2>
+  <div class="products-container">
+    <!-- Product Card -->
+    <div class="product-card">
+      <img src="zse.jpg" alt="Milky Glow Soap" class="product-image">
+      <h3>Milky Glow Soap</h3>
+      <p class="product-description">A gentle, effective whitening soap that gives your skin a milky, radiant glow while removing blemishes and dark spots.</p>
+      <p class="product-price">₱150</p>
+      <button class="buy-button">Purchase</button>
+    </div>
+
+    <!-- Product Card -->
+    <div class="product-card">
+      <img src="zse.jpg" alt="Glow Shield Sunscreen" class="product-image">
+      <h3>Glow Shield Sunscreen Gel SPF 50</h3>
+      <p class="product-description">Lightweight, non-greasy gel cream sunscreen with SPF 50. Protects and nourishes your skin with every use.</p>
+      <p class="product-price">₱250</p>
+      <button class="buy-button">Purchase</button>
+    </div>
+
+    <!-- Add more products below as needed -->
+  </div>
+</section>
     
     <h3>Why Choose Us?</h3>
     <div class="container">
