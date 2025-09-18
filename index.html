@@ -1,73 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Zyanna Skin Essential</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-<nav id="navbar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zyanna Skin Essential</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background: #fff0f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Navbar */
+    #navbar {
+      background: #ffb6c1;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    #navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+    #navbar img {
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .logo-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #b22222;
+    }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-list li a {
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-list li a:hover {
+      color: #b22222;
+    }
+    .hamburger-menu {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .hamburger-menu .bar {
+      width: 25px;
+      height: 3px;
+      background: #333;
+    }
+
+    /* Hero Section */
+    #welcome-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+    }
+    .slogan {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #b22222;
+      margin-bottom: 1.5rem;
+    }
+    #welcome-section p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    .banner {
+      margin-top: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* About Section */
+    #about_us {
+      padding: 4rem 2rem;
+      background: #fff;
+      text-align: center;
+    }
+    #about_us h2 {
+      font-size: 2rem;
+      color: #b22222;
+      margin-bottom: 1rem;
+    }
+    #about_us p {
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #555;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .wrapped-image {
+      width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #ffb6c1;
+      padding: 1.5rem;
+      text-align: center;
+      color: #333;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        background: #fff0f5;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      .nav-list.active {
+        display: flex;
+      }
+      .hamburger-menu {
+        display: flex;
+      }
+      .slogan {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu(){
+      document.querySelector(".nav-list").classList.toggle("active");
+    }
+  </script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav id="navbar">
     <div class="logo">
-        <img src="../assets/images/logo.png" alt="logo" class="logo">
-        <p class="logo-title"><a href="https://zyannaskinessential.github.io">ZYANNA SKIN ESSENTIAL</a></p>
-	      <p class="short-title"><a href="https://nexgenixbusinessschool.github.io">ZYANNA SE</a></p>
+      <img src="assets/images/logo.png" alt="logo" />
+      <p class="logo-title"><a href="#">ZYANNA SKIN ESSENTIAL</a></p>
     </div>
-
-            <!-- Hamburger Menu Icon -->
-        <div class="hamburger-menu" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
     <ul class="nav-list">
-        <li><a href="https://zyannaskinessential.github.io">Home</a></li>
-        <li><a href="https://zyannaskinessential.github.io/#about_us">About Us</a></li>
-        <li><a href="https://zyannaskinessential.github.io/#products">Products</a></li>
-        <li><a href="https://zyannaskinessential.github.io/#reviews">Reviews</a></li>
-	      <li><a href="#careers">Careers</a></li>
-        <li><a href="https://nexgenixbusinessschool.github.io/#contact">Contact</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about_us">About Us</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+  </nav>
 
   <!-- Welcome Section -->
-<section id="welcome-section">
-<h1 class="slogan">BEAUTY IN SIMPLICITY.</h1>
+  <section id="welcome-section">
+    <h1 class="slogan">BEAUTY IN SIMPLICITY.</h1>
+    <p>At Zyanna'Skin Essential, we are passionate about helping you express your true beauty. We believe that beauty comes from within and we are dedicated to providing you with the best products to help you shine. Explore our collection and unleash the beauty that's uniquely you.</p>
     <img src="assets/images/banner.png" alt="banner" class="banner">
-<main id="main-doc">
-<p>At Zyanna'Skin Essential, we are passionate about helping you express your true beauty. We believe that beauty comes from within and we are dedicated to providing you with the best products to help you shine. Explore our collection and unleash the beauty that's uniquely you.</p>
-</main></section>
+  </section>
 
-<h2 class="responsive-slogan">BEAUTY IN SIMPLICITY.</h2>
-<img src="assets/images/banner.png" alt="banner" class="responsive-banner">
-<p>At Zyanna'Skin Essential, we are passionate about helping you express your true beauty. We believe that beauty comes from within and we are dedicated to providing you with the best products to help you shine. Explore our collection and unleash the beauty that's uniquely you.</p>
+  <!-- About Section -->
+  <section id="about_us">
+    <h2>About Us</h2>
+    <p>Zyanna'Skin Essential is a beauty and skincare product company, started its humble beginnings on February 18, 2023 and has already made a name for itself in its field.</p>
+    <p>Its pioneer product, Milky Glow Soap, has already proven its superb quality with outstanding sales performance and positive feedbacks. With a mild formulation and proven efficacy in achieving glowing skin and removing blemishes, dark spots and pimple marks through continuous use, the Milky Glow Soap has certainly proven to be worth its price.</p>
+    <p>Zyanna'Skin Essential also released its newest product, Glow Shield Whitening Sunscreen Gel Cream with SPF 50, with nothing but the best quality, efficacy, and affordability guaranteed for its users.</p>
+    <p>More products will be released soon, including Kojic Papaya Soap, Whitening Lotion, Rejuvenating Sets, and more. The dedication and support that our distributors, resellers and customers have entrusted to us will always be part of Zyanna'Skin Essential's growth and success.</p>
+    
+    <h3>Why Choose Us?</h3>
+    <div class="container">
+      <img src="assets/images/home.png" alt="About us image" class="wrapped-image">
+      <img src="assets/images/home.png" alt="About us image" class="wrapped-image">
+      <img src="assets/images/home.png" alt="About us image" class="wrapped-image">
+      <img src="assets/images/home.png" alt="About us image" class="wrapped-image">
+    </div>
+  </section>
 
-<!-- About Section -->
-<section class="main-section" id="about_us"> 
-<article>
-<h2>About Us</h2>
-<p></p></P>Zyanna'Skin Essential is a beauty and skincare product company, started its humble beginnings on February 18, 2023 and has already made a name for itself in its field.</p>
-
-<p>It's pioneer product, Milky Glow Soap, has already proven its superb quality with its outstanding sales performance and positive feedbacks from its customers, distributors, and resellers. With a mild formulation and proven efficacy in achieving a more glowing skin and removing blemishes, dark spots and pimple marks through continuous use, the Milky Glow Soap has certainly proven to be well worth its price.</p>
-
-<p>Zyanna'Skin Essential also released its newest prduct, Glow Shield Whitening Sunscreen Gel Cream with SPF 50, with nothing but the best quality, efficacy, and affordability guaranteed for its users.</p>
-
-<p>Also, more products will be released soon, including kojic papaya soap, whitening lotion, rejuvinating sets and more. The belief, dedication and support that our distributors, resellers and customers have entrusted to us, surely and always will be part of Zyanna'Skin Essential's growth and success.</p>
-
-<h3>Why Choose Us?</h3>
-<div class="container">
-
-<img src="assets/images/home.png" alt="About us image" class="wrapped-image">
-<img src="assets/images/home.png" alt="About us image" class="wrapped-image">
-<img src="assets/images/home.png" alt="About us image" class="wrapped-image">
-<img src="assets/images/home.png" alt="About us image" class="wrapped-image">
-<p>words words words</p>
-</div>
-</article>
-</section>
-  <footer></footer>
-  </body>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Zyanna'Skin Essential. All Rights Reserved.</p>
+  </footer>
+</body>
 </html>
