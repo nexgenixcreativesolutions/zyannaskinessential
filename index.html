@@ -143,6 +143,48 @@
       margin-top: 2rem;
     }
 
+/* Distributor Showcase Section */
+#client_showcase {
+  background: #fff0f5;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+#client_showcase h2 {
+  color: #b22222;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.client-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 0 1rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
     /* Responsive */
     @media(max-width: 768px){
       .nav-list {
@@ -219,6 +261,27 @@
     </div>
   </section>
 
+  <!-- Distributors Showcase Section -->
+<section id="client_showcase">
+  <h2>Regional Distributors</h2>
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <img src="zse.jpg" alt="Client 1" class="client-img">
+      <img src="zse.jpg" alt="Client 2" class="client-img">
+      <img src="zse.jpg" alt="Client 3" class="client-img">
+      <img src="zse.jpg" alt="Client 4" class="client-img">
+      <img src="zse.jpg" alt="Client 5" class="client-img">
+      <!-- Duplicate images for seamless loop -->
+      <img src="zse.jpg" alt="Client 1" class="client-img">
+      <img src="zse.jpg" alt="Client 2" class="client-img">
+      <img src="zse.jpg" alt="Client 3" class="client-img">
+      <img src="zse.jpg" alt="Client 4" class="client-img">
+      <img src="zse.jpg" alt="Client 5" class="client-img">
+    </div>
+  </div>
+</section>
+
+  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Zyanna'Skin Essential. All Rights Reserved.</p>
