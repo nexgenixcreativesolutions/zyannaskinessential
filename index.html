@@ -293,6 +293,50 @@
   background: #8b0000;
 }
 
+/* Feedback Section */
+#reviews {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#reviews h2 {
+  font-size: 2rem;
+  color: #b22222;
+  margin-bottom: 2rem;
+}
+
+.feedback-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feedback-image {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feedback-image:hover {
+  transform: scale(1.03);
+}
+
+.read-more a {
+  color: #b22222;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.read-more a:hover {
+  color: #8b0000;
+}
 
     /* Responsive */
     @media(max-width: 768px){
@@ -360,7 +404,9 @@
     <p>Its pioneer product, Milky Glow Soap, has already proven its superb quality with outstanding sales performance and positive feedbacks. With a mild formulation and proven efficacy in achieving glowing skin and removing blemishes, dark spots and pimple marks through continuous use, the Milky Glow Soap has certainly proven to be worth its price.</p>
     <p>Zyanna'Skin Essential also released its newest product, Glow Shield Whitening Sunscreen Gel Cream with SPF 50, with nothing but the best quality, efficacy, and affordability guaranteed for its users.</p>
     <p>More products will be released soon, including Kojic Papaya Soap, Whitening Lotion, Rejuvenating Sets, and more. The dedication and support that our distributors, resellers and customers have entrusted to us will always be part of Zyanna'Skin Essential's growth and success.</p>
-
+  <div class="read-more">
+    <a href="#learn-more-about-us">Learn more &gt;&gt;</a>
+  </div>
     <!-- Products Section -->
 <section id="products">
   <h2>Our Products</h2>
@@ -386,6 +432,20 @@
     <!-- Add more products below as needed -->
   </div>
 </section>
+
+    <!-- Feedback Section -->
+<section id="reviews">
+  <h2>Customer Feedback</h2>
+  <div class="feedback-container">
+    <img src="zse.jpg" alt="Feedback 1" class="feedback-image">
+    <img src="zse.jpg" alt="Feedback 2" class="feedback-image">
+    <img src="zse.jpg" alt="Feedback 3" class="feedback-image">
+  </div>
+  <div class="read-more">
+    <a href="#more-reviews">Read more &gt;&gt;</a>
+  </div>
+</section>
+
     
     <h3>Why Choose Us?</h3>
     <div class="container">
