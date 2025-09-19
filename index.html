@@ -80,14 +80,17 @@
 
 /* Hero Section */
 #welcome-section {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   padding: 6rem 2rem;
-  background-image: url('zse.jpg'); /* This applies the image ONLY to this section */
+  background-image: url('welcome image.jpg'); /* New background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
   position: relative;
+  min-height: 80vh;
 }
 
 #welcome-section::before {
@@ -97,29 +100,33 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 182, 193, 0.6); /* Optional pink overlay */
+  background-color: rgba(255, 182, 193, 0.6); /* Optional soft pink overlay */
   z-index: 0;
 }
 
-#welcome-section .slogan,
-#welcome-section p {
+.welcome-content {
   position: relative;
   z-index: 1;
+  max-width: 600px;
+  text-align: left;
+  padding: 1rem 2rem;
 }
 
-.slogan {
+.welcome-content .slogan {
   font-size: 2.5rem;
   font-weight: 700;
   color: #b22222;
   margin-bottom: 1.5rem;
 }
 
-#welcome-section p {
-  max-width: 700px;
-  margin: auto;
+.welcome-content p {
   font-size: 1.1rem;
   color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 10px;
 }
+
     /* About Section */
     #about_us {
       padding: 4rem 2rem;
@@ -450,12 +457,13 @@
     </ul>
   </nav>
 
-  <!-- Welcome Section -->
-  <section id="welcome-section">
+<!-- Welcome Section -->
+<section id="welcome-section">
+  <div class="welcome-content">
     <h1 class="slogan">BEAUTY IN SIMPLICITY.</h1>
     <p>At Zyanna'Skin Essential, we are passionate about helping you express your true beauty. We believe that beauty comes from within and we are dedicated to providing you with the best products to help you shine. Explore our collection and unleash the beauty that's uniquely you.</p>
-    <img src="welcome image.jpg" alt="banner" class="banner">
-  </section>
+  </div>
+</section>
 
   <!-- About Section -->
   <section id="about_us">
