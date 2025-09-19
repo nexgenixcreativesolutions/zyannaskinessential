@@ -84,24 +84,18 @@
   align-items: center;
   justify-content: flex-start;
   padding: 6rem 2rem;
-  background-image: url('welcome image.jpg'); /* New background image */
-  background-size: cover;
-  background-position: center;
+  background-image: url('welcome image.jpg'); /* Use your actual file name */
+  background-size: contain; /* ✅ Zoomed out to fit whole image */
+  background-position: center left; /* ✅ Focus on left (for face and soap) */
   background-repeat: no-repeat;
   color: #fff;
   position: relative;
   min-height: 80vh;
 }
 
+/* ❌ Remove overlay entirely */
 #welcome-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 182, 193, 0.6); /* Optional soft pink overlay */
-  z-index: 0;
+  display: none;
 }
 
 .welcome-content {
@@ -110,6 +104,8 @@
   max-width: 600px;
   text-align: left;
   padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.85); /* ✅ Optional for readability */
+  border-radius: 10px;
 }
 
 .welcome-content .slogan {
@@ -122,10 +118,8 @@
 .welcome-content p {
   font-size: 1.1rem;
   color: #333;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 1rem;
-  border-radius: 10px;
 }
+
 
     /* About Section */
     #about_us {
