@@ -60,9 +60,10 @@
       font-optical-sizing: auto;
       font-weight: 500;
       font-style: normal;
-      font-size: 1.2rem;
+      font-size: 1.8rem;
       color: #b22222;
     }
+
     
     .nav-list {
       list-style: none;
@@ -106,6 +107,12 @@
       color: #fff;
       position: relative;
       min-height: 80vh;
+    }
+
+    @media (max-width: 768px) {
+      #welcome-section {
+        background-image: url('welcome-image-mobile.jpg');
+      }
     }
 
     #welcome-section::before {
@@ -316,10 +323,12 @@
 }
 
 .products-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
   gap: 2rem;
+  justify-content: center;
 }
 
 .product-card {
