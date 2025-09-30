@@ -310,27 +310,14 @@
 }
 
     /* Products Section */
-#products {
-  background: #fff0f5;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-#products h2 {
-  font-size: 2rem;
-  color: #b22222;
-  margin-bottom: 2.5rem;
-}
-
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* wider than 220px */
+  max-width: 1100px;
   margin: 0 auto;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
 }
-
 
 .product-card {
   background: #fff;
@@ -339,6 +326,10 @@
   padding: 1.5rem;
   text-align: left;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 460px; /* Uniform height */
 }
 
 .product-card:hover {
@@ -360,16 +351,18 @@
 }
 
 .product-description {
-  font-size: 0.95rem;
+  font-size: 0.85rem; /* reduced size */
   color: #555;
-  margin-bottom: 0.8rem;
+  margin-bottom: auto; /* push price & button to bottom */
+  flex-grow: 1;
 }
 
 .product-price {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #333;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .buy-button {
@@ -381,6 +374,7 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  align-self: flex-start;
 }
 
 .buy-button:hover {
