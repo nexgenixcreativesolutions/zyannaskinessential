@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Zyanna'Skin Essential</title>
+  <link rel="icon" type="image/x-icon" href="zse.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --rose: #e8a0a0; --deep-rose: #b22222; --blush: #fff0f5;
+      --cream: #fffaf8; --text: #3a2a2a; --muted: #7a6060;
+      --white: #ffffff; --shadow: 0 8px 32px rgba(178,34,34,0.08); --radius: 18px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--text); line-height: 1.7; font-family: 'Jost', sans-serif; }
+    a { text-decoration: none; color: inherit; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--blush); }
+    ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 3px; }
+
+    /* Navbar */
+    #navbar {
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      padding: 0 2.5rem; height: 72px;
+      display: flex; justify-content: space-between; align-items: center;
+      position: sticky; top: 0; z-index: 1000;
+      border-bottom: 1px solid rgba(232,160,160,0.25);
+      box-shadow: 0 2px 20px rgba(178,34,34,0.06);
+    }
+    .logo { display: flex; align-items: center; gap: 0.75rem; }
+    .logo img { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--rose); }
+    .logo-title { font-family: 'Edu NSW ACT Cursive', cursive; font-size: 1.15rem; color: var(--deep-rose); }
+    .nav-list { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    .nav-list li a {
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); transition: color 0.25s; position: relative; padding-bottom: 4px;
+    }
+    .nav-list li a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px;
+      background: var(--deep-rose); transition: width 0.3s ease;
+    }
+    .nav-list li a:hover { color: var(--deep-rose); }
+    .nav-list li a:hover::after { width: 100%; }
+    .nav-list li a.active { color: var(--deep-rose); }
+    .nav-list li a.active::after { width: 100%; }
+    .nav-cta {
+      background: var(--deep-rose) !important; color: var(--white) !important;
+      padding: 0.45rem 1.2rem !important; border-radius: 50px !important;
+    }
+    .nav-cta:hover { background: #8b0000 !important; }
+    .nav-cta::after { display: none !important; }
+    .hamburger-menu { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger-menu .bar { width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, var(--blush) 0%, #ffe4ec 100%);
+      padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(232,160,160,0.25), transparent 70%); border-radius: 50%;
+    }
+    .section-label {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.6rem;
+    }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 600;
+      color: var(--deep-rose); margin-bottom: 1rem;
+    }
+    .page-hero p { color: var(--muted); font-size: 1.05rem; max-width: 480px; margin: 0 auto; }
+
+    /* Contact Layout */
+    #contact { padding: 5rem 2rem 6rem; }
+    .contact-wrapper {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: start;
+    }
+
+    /* Info Panel */
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .info-card {
+      background: var(--white); border-radius: var(--radius); padding: 1.8rem;
+      box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: 1.2rem;
+    }
+    .info-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--blush); display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .info-card h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--rose); margin-bottom: 0.3rem; }
+    .info-card p { font-size: 0.95rem; color: var(--muted); }
+    .social-strip {
+      background: var(--white); border-radius: var(--radius); padding: 1.8rem;
+      box-shadow: var(--shadow);
+    }
+    .social-strip h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--rose); margin-bottom: 1rem; }
+    .social-links { display: flex; gap: 0.75rem; }
+    .social-btn {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--blush); display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; transition: background 0.3s, transform 0.2s;
+      color: var(--deep-rose);
+    }
+    .social-btn:hover { background: var(--deep-rose); color: var(--white); transform: scale(1.1); }
+
+    /* Form Panel */
+    .contact-form-wrap {
+      background: var(--white); border-radius: var(--radius);
+      padding: 2.5rem; box-shadow: var(--shadow);
+    }
+    .contact-form-wrap h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; color: var(--deep-rose); margin-bottom: 0.4rem;
+    }
+    .contact-form-wrap > p { font-size: 0.9rem; color: var(--muted); margin-bottom: 2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.2rem; }
+    .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--text); letter-spacing: 0.04em; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid rgba(178,34,34,0.15); border-radius: 10px;
+      font-size: 0.92rem; color: var(--text); background: var(--cream);
+      font-family: 'Jost', sans-serif; transition: border-color 0.25s, box-shadow 0.25s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--deep-rose);
+      box-shadow: 0 0 0 3px rgba(178,34,34,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .submit-btn {
+      width: 100%; padding: 1rem;
+      background: var(--deep-rose); color: var(--white);
+      border: none; border-radius: 50px; font-size: 1rem; font-weight: 600;
+      cursor: pointer; font-family: 'Jost', sans-serif; letter-spacing: 0.04em;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 16px rgba(178,34,34,0.3);
+    }
+    .submit-btn:hover { background: #8b0000; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(178,34,34,0.35); }
+    .success-msg {
+      display: none; background: #fff0f5; border: 1.5px solid var(--rose);
+      border-radius: 10px; padding: 1rem 1.2rem; margin-top: 1.2rem;
+      color: var(--deep-rose); font-size: 0.92rem; text-align: center;
+    }
+
+    /* Footer */
+    footer { background: var(--text); color: rgba(255,255,255,0.6); padding: 2.5rem 2rem; }
+    .footer-inner {
+      max-width: 1140px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-brand { font-family: 'Edu NSW ACT Cursive', cursive; font-size: 1.1rem; color: var(--rose); }
+    .footer-links { display: flex; gap: 1.5rem; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .footer-links a { transition: color 0.25s; }
+    .footer-links a:hover { color: var(--rose); }
+    .footer-copy { font-size: 0.82rem; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-list {
+        display: none; flex-direction: column; background: var(--white);
+        position: absolute; top: 72px; left: 0; right: 0;
+        padding: 1.5rem 2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.1); gap: 1.2rem;
+      }
+      .nav-list.active { display: flex; }
+      .hamburger-menu { display: flex; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">
+      <img src="zse.jpg" alt="Logo" />
+      <span class="logo-title">Zyanna'Skin Essential</span>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about_us">About</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="index.html#client_showcase">Distributors</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <span class="section-label">Get In Touch</span>
+    <h1>We'd love to hear from you</h1>
+    <p>Whether you have a question, a partnership inquiry, or just want to say hello — we're here for you.</p>
+  </div>
+
+  <section id="contact">
+    <div class="contact-wrapper">
+
+      <!-- Info Panel -->
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Our Location</h4>
+            <p>Philippines</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <div>
+            <h4>Email Us</h4>
+            <p>hello@zyannaessential.com</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>Call / Message</h4>
+            <p>+63 900 000 0000</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🕐</div>
+          <div>
+            <h4>Business Hours</h4>
+            <p>Mon – Sat, 9:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+        <div class="social-strip">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-btn" title="Facebook">f</a>
+            <a href="#" class="social-btn" title="Instagram">📸</a>
+            <a href="#" class="social-btn" title="TikTok">♪</a>
+            <a href="#" class="social-btn" title="Shopee">🛍</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Panel -->
+      <div class="contact-form-wrap">
+        <h2>Send us a message</h2>
+        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="Maria" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Santos" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="maria@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number (optional)</label>
+            <input type="tel" id="phone" placeholder="+63 900 000 0000" />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option>Product Inquiry</option>
+              <option>Order / Shipping</option>
+              <option>Distributorship / Reseller</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us how we can help you..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message &rarr;</button>
+          <div class="success-msg" id="successMsg">
+            ✦ Thank you! Your message has been sent. We'll get back to you shortly.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">Zyanna'Skin Essential</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about_us">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Zyanna'Skin Essential. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-list').classList.toggle('active');
+    }
+    function handleSubmit(e) {
+      e.preventDefault();
+      const msg = document.getElementById('successMsg');
+      msg.style.display = 'block';
+      e.target.reset();
+      setTimeout(() => msg.style.display = 'none', 5000);
+    }
+  </script>
+</body>
+</html>
